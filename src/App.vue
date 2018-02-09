@@ -32,7 +32,11 @@
         },
         methods: {
             newQuote(quote) {
-                this.quotes.push(quote)
+                if (this.quotes.length === this.maxQuotes) {
+                    alert('You reached the maximum number, delete before')
+                } else {
+                    this.quotes.push(quote)
+                }
             },
             deleteQuote(index) {
                 this.quotes.slice(index, 1)
